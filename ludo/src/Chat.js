@@ -21,10 +21,12 @@ const header_style = {
 };
 
 const chat_box = {
-  display: "block",
+  display: "flex",
+  flexDirection: "column-reverse",
   margin: "auto",
   height: "330px",
   width: "550px",
+  overflowY: "auto",
 };
 
 const input_style = {
@@ -51,7 +53,9 @@ const Chat = () => {
   return (
     <div style={container_style}>
       <h2 style={header_style}>Game Chat</h2>
-      <div style={chat_box}>{history}</div>
+      <div style={chat_box}>
+        <div>{history}</div>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
